@@ -6,11 +6,9 @@ def _get_next_id(resp: str) -> str:
     return temp_list[len(temp_list) - 1]
 
 
-quirks = ["There maybe misleading numbers in the text.", "Your hands are getting tired"]
-
 url_base = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing="
 id = "12345"
-for i in range(399):
+while True:
     resp = urllib.request.urlopen(url_base + id).read().decode("utf-8")
     if resp == "Yes. Divide by two and keep going.":
         id = str(int(id) / 2)
